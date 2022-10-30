@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useDispatch} from "react-redux";
+import { storeData } from "./redux/action";
+import { useState } from 'react';
+import { GetData } from "./api";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const dispatch = useDispatch()
+  const [data , setData] = useState('')
+  
+  function handleSearchResult(e) {
+    setData(e.target.value); 
+  }
+
+  function handleGetData(){
+    GetData.get(data).then(res => {
+      dispatch(storeData(res.data.item));
+      console.log(res)
+    });
+  }
+
+  return <div className="App">
+    <input onChange={e => handleSearchResult(e)}/>
+    <button onClick={handleGetData}>get</button>
+  </div>;
 }
 
 export default App;
