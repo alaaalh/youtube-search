@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  background-image: url("../../assets/images/YouTube-Logo.wine.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100px;
+  height: 40px;
+}
+
+.container {
+  box-shadow: 1px 1px 3px #dbd5d5;
+  width: "80%";
+  margin: "auto";
+  position: fixed;
+  top: 0;
+  left: 10%;
+  right: 10%;
+}
+
+.topnav,
+.subnav {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 3px;
+}
+
+.subnav {
+  margin-top: 40px;
+}
+
+.subnav p {
+  color: #72728b;
+  font-weight: 100;
+}
+
+.topnav input[type="text"] {
+  margin-top: 5px;
+  font-size: 17px;
+  border: 1px solid #4d4dcd;
+  visibility: visible;
+}
+
+.topnav input[type="text"]:hover,
+.topnav input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #4d4dcd;
+}
+
+.topnav .search-container button {
+  cursor: pointer;
+}
+
+.searchValue{
+  color: white;
+  margin-top: 5px;
+  font-size: 22px;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    position: sticky;
+    background-color: #cb1d0c;
+  }
+
+  .logo {
+    background-image: url("../../assets/images/youtube-transparent.png");
+  }
+
+  .searchButton {
+    background-color: #cb1d0c;
+    border: none;
+    outline: none;
+  }
+
+  .topnav input[type="text"] {
+    width: 10px;  
+    padding: 5px;
+    margin-bottom: 4px;
+    border: none
+  }
+
+  .topnav {
+    justify-content: space-between;
+  }
+
+  .subnav {
+    margin-top: 10px;
+  }
+}
