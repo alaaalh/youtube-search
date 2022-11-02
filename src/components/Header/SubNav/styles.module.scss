@@ -1,0 +1,24 @@
+.subnav {
+  margin-top: 40px;
+}
+
+.subnav p {
+  color: #72728b;
+  font-weight: 100;
+}
+
+hr {
+  border: none;
+  box-shadow: 1px 1px 1px 1px #dbd5d5;
+  margin-top: 0px;
+  width: 80%;
+}
+
+.subnav {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  width: 80%;
+  margin-top: 50px;
+}

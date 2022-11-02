@@ -1,0 +1,45 @@
+.logo {
+  background-image: url("../../../assets/images/YouTube-Logo.wine.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100px;
+  height: 40px;
+}
+
+.container {
+  box-shadow: 1px 1px 3px #dbd5d5;
+  width: "80%";
+  margin: "auto";
+  position: fixed;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  background-color: white;
+}
+
+.topnav {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+}
+
+.topnav input[type="text"] {
+  // margin-top: 5px;
+  height: 100%;
+  font-size: 17px;
+  border: 1px solid #4d4dcd;
+  visibility: visible;
+  padding: 1px;
+}
+
+.topnav input[type="text"]:is(:hover , :focus){
+  outline: none;
+  border: 1px solid #4d4dcd;
+}
+
+.topnav .search-container button {
+  cursor: pointer;
+}
+

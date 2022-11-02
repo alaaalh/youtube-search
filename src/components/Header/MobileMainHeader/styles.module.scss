@@ -1,0 +1,42 @@
+.container {
+  background-color: #d91919;
+  padding: 2px;
+}
+
+.topnav {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+}
+
+.topnav input[type="text"] {
+  margin-top: 5px;
+  margin-right: 4px;
+  font-size: 17px;
+  outline: none;
+  border: none;
+  padding: 4px;
+}
+
+.topnav input[type="text"]:is(:hover , :focus){
+  outline: none;
+  border: none;
+}
+.logo {
+  background-image: url("../../../assets/images/youtube-transparent.png");
+  width: 50px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;   
+}
+
+.searchValue{
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+

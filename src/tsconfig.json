@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist/",
+      "noImplicitAny": true,
+      "module": "es6",
+      "target": "es5",
+      "jsx": "react",
+      "allowJs": true,
+      "moduleResolution": "node",
+      "useUnknownInCatchVariables": false,
+    },
+    "include": ["./components/Header/styles.module.scss", "index.d.ts"]
+    
+  }
+
+  // module.exports = {
+  //   //...
+  //   resolve: {
+  //     extensions: ['.js', '.jsx']
+  //   }
+  // };
+
+  
