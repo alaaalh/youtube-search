@@ -4,7 +4,7 @@ const axiosInstance = axios.create({
   baseURL: "https://www.googleapis.com/youtube/v3/",
   params: {
     key: "AIzaSyBzsgKRU9oV5KifLzvvDgBLiEpuZBYdXfk",
-    maxResults: 3,
+    maxResults: 10,
   },
   headers: {
     Accept: "application/json",
