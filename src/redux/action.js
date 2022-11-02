@@ -12,16 +12,16 @@ export const totalResult = (payload)=>{
     }
 }
 
-export const channelDetails = (payload) => {
+export const Loading = (payload) => {
     return {
-        type: 'CHANNEL',
+        type: 'LOADING',
         payload
     }
 }
 
-export const Loading = (payload) => {
+export const viewsCounter = (payload) => {
     return {
-        type: 'LOADING',
+        type:'VIEWS',
         payload
     }
 }

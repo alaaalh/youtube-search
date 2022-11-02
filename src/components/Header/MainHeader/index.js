@@ -5,8 +5,9 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { storeData } from "../../../redux/action.js";
 import { useState } from "react";
-import { GetData } from "../../../api";
+import { GetData } from "../../../helpers/api";
 import { totalResult } from "../../../redux/action.js";
+import { viewsCounter } from "../../../redux/action.js";
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -23,17 +24,25 @@ export default function Header() {
   function handleGetData() {
     if (searchValue.current.value) {
       GetData.get(searchValue.current.value).then((res) => {
+        // console.log(res.data.items);
+        dispatch(viewsCounter(res.data.items))
         dispatch(storeData(res.data));
-        dispatch(totalResult(res.data.pageInfo.totalResults))
+        dispatch(totalResult(res.data.pageInfo.totalResults));
       });
+
     }
   }
+
+
 
   return (
     <div className={Classes.container}>
       <div className={Classes.topnav}>
         <div className={Classes.logo}></div>
-        <div className={Classes.searchContainer} style={{display: "flex", height: "25px"}}>
+        <div
+          className={Classes.searchContainer}
+          style={{ display: "flex", height: "25px" }}
+        >
           <div>
             <input
               type="text"
@@ -43,12 +52,9 @@ export default function Header() {
             />
           </div>
           <div>
-            <button
-              style={{ height: "100%" }}
-              onClick={handleGetData}
-            >
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </button> 
+            <button style={{ height: "100%" }} onClick={handleGetData}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </button>
           </div>
         </div>
       </div>

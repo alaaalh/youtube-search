@@ -6,8 +6,7 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { Loading, storeData } from "../../../redux/action.js";
 import { useState } from "react";
-import { GetData } from "../../../api";
-import { channelDetails } from "../../../redux/action.js";
+import { GetData } from "../../../helpers/api";
 
 export default function MobileMainHeader() {
   const dispatch = useDispatch();
@@ -37,11 +36,6 @@ export default function MobileMainHeader() {
         GetData.get(inputValue.current.value).then((res) => {
           dispatch(Loading(false))
           dispatch(storeData(res.data));
-        });
-
-        GetData.getChannel(inputValue.current.value).then((res) => {
-          console.log(res.data.items[0].id)
-          dispatch(channelDetails(res.data.items[0].id));
         });
       }
     }

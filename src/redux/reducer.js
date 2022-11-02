@@ -1,10 +1,10 @@
 const INITIAL_STATE = {
   currentData: [],
-  totalCount:'',
-  currentChannel: '',
-  isLoading: false
+  totalCount: "",
+  currentChannel: "",
+  isLoading: false,
+  currentlyViews: {}
 };
-
 
 export default function data(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -12,22 +12,22 @@ export default function data(state = INITIAL_STATE, action) {
       return {
         ...state,
         currentData: action.payload,
-      }
+      };
     case "TOTAL_RESULT":
       return {
         ...state,
         totalCount: action.payload,
-      }
-    case 'CHANNEL':
-      return{
+      };
+    case "LOADING":
+      return {
         ...state,
-        currentChannel : action.payload
-      }
-    case 'LOADING':
-      return{
+        isLoading: action.payload,
+      };
+    case "VIEWS":
+      return {
         ...state,
-        isLoading: action.payload
-      }
+        currentlyViews: action.payload,
+      };
     default:
       return state;
   }

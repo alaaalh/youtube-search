@@ -6,7 +6,7 @@ import { faSquareYoutube } from "@fortawesome/free-brands-svg-icons";
 import { useDispatch } from "react-redux";
 import { storeData } from "../../../redux/action.js";
 import { useState } from "react";
-import { GetData } from "../../../api";
+import { GetData } from "../../../helpers/api";
 
 export default function MobileMainHeader() {
   const dispatch = useDispatch();

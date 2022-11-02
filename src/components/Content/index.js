@@ -3,10 +3,12 @@ import React, { useEffect } from "react";
 import Card from "../../ui/Card";
 import Classes from "./style.module.scss";
 import { useState } from "react";
-import { GetData } from "../../api";
 import MediaQuery from "react-responsive";
+import { useSelector } from "react-redux";
+import { GetData } from "../../helpers/api";
 
 export default function Content(props) {
+  // console.log(props);
   const [publishTime, setPublishTime] = useState();
   const [views, setViews] = useState();
   const currentlyDate = new Date();
@@ -17,6 +19,7 @@ export default function Content(props) {
   const monthes = (currentlyDate - date) / monthe;
   const yearsRound = Math.round(years);
   const monthesRound = Math.round(monthes);
+  // const selectViews = useSelector((state) => state.currentlyViews);
 
   useEffect(() => {
     if (yearsRound > 0) {
@@ -28,14 +31,11 @@ export default function Content(props) {
     }
 
     GetData.getViews(props.videoId).then((res) => {
-      res.data.items.map((res) => {
-        return setViews(res.statistics.viewCount);
+      res.data.items.map((res , index) => {
+        return <div key={index}>{setViews(res.statistics.viewCount)}</div>;
       });
     });
-
-    GetData.postThumbnails(props.videoId).then(res => {
-      console.log(res)
-    })
+    // console.log(selectViews)
   }, []);
 
   function kFormatter(num) {
@@ -89,7 +89,7 @@ export default function Content(props) {
           <strong>{props.title}</strong>
           <br />
           <small className={Classes.subTitle}>
-            {props.channalTitle} . {kFormatter(views)} . {publishTime}
+            {props.channalTitle} .{kFormatter(views)}. {publishTime}
           </small>
         </div>
         </div>

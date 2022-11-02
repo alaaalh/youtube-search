@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React from "react";
-import Card from "../../ui/Card";
-import Classes from "./style.module.scss";
-export default function Channel(props) {
+import React from 'react';
+import Classes from './style.module.scss';
+import Card from '../../ui/Card';
+
+export default function Playlist(props) {
   return (
     <Card>
-        <div  style={{ width: "45%" }}>
-          <div className={Classes.channelContainer}>
+        <div className={Classes.videoContainer} style={{ width: "45%" }}>
+          <div className={Classes.playlist}>
           <iframe
             type="text/html"
             width="100%"
@@ -22,8 +23,12 @@ export default function Channel(props) {
         >
           <strong>{props.title}</strong>
           <br />
+          <small className={Classes.subTitle}>
+            {props.playlistCount}
+          </small>
+          <br />
           <small className={Classes.discription}>{props.discription}</small>
         </div>
         </Card>
-  );
+  )
 }

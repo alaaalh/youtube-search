@@ -1,13 +1,21 @@
 .videoContainer {
   width: "40%";
   margin-top: 10px;
-    // background-image: url(../../assets/images/Loading_icon.gif);
-    // z-index: 10;
+}
+
+.channelContainer{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
 }
 
 .videoDiscription {
   margin-top: 10px;
-  margin-left: "20px" 
+  margin-left: "20px";
+  height: 130px;
+  overflow: hidden;
 }
 .subTitle{
   font-size: 10px;
@@ -17,4 +25,12 @@
 .discription{
   color: rgb(79, 68, 68);
   font-size: 13px;
+}
+
+.playlist{
+  width:80px;
+  height: 100px;
+  z-index: 3;
+  opacity: .5;
+  background-color: black;
 }
